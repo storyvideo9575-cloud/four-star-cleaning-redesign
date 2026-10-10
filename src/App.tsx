@@ -9,6 +9,7 @@ import { SEO_PAGE_METADATA } from './data/businessData';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { SitemapModal } from './components/SitemapModal';
+import { MobileStickyBar } from './components/MobileStickyBar';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -131,6 +132,12 @@ export default function App() {
       <SitemapModal
         isOpen={sitemapOpen}
         onClose={() => setSitemapOpen(false)}
+        onNavigate={navigateTo}
+      />
+
+      {/* 4. Mobile Quick-Action Sticky Bar */}
+      <MobileStickyBar
+        currentPath={currentPath}
         onNavigate={navigateTo}
       />
     </div>

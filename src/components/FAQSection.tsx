@@ -95,17 +95,17 @@ export const FAQSection: React.FC = () => {
       : FAQ_DATA.filter((item) => item.category === activeCategory);
 
   return (
-    <section className="bg-white border-y border-slate-200 py-16 lg:py-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+    <section className="bg-white border-y border-slate-200 py-12 sm:py-16 lg:py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-[#3D8B68]">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#3D8B68]">
             Frequently Asked Questions
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#10243A] tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#10243A] tracking-tight">
             Commercial Service & Operational Standards
           </h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
             Essential information regarding our service schedules, commercial safety standards, and insurance coverage for New York City facilities.
           </p>
         </div>
@@ -115,7 +115,7 @@ export const FAQSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveCategory('all')}
-            className={`px-4 py-2 text-xs font-semibold rounded-md transition-colors cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-lg transition-colors cursor-pointer min-h-[38px] ${
               activeCategory === 'all'
                 ? 'bg-[#10243A] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -126,7 +126,7 @@ export const FAQSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveCategory('schedules')}
-            className={`px-4 py-2 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer min-h-[38px] ${
               activeCategory === 'schedules'
                 ? 'bg-[#10243A] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -138,7 +138,7 @@ export const FAQSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveCategory('safety')}
-            className={`px-4 py-2 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer min-h-[38px] ${
               activeCategory === 'safety'
                 ? 'bg-[#10243A] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -150,7 +150,7 @@ export const FAQSection: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveCategory('insurance')}
-            className={`px-4 py-2 text-xs font-semibold rounded-md transition-colors flex items-center gap-1.5 cursor-pointer ${
+            className={`px-3.5 py-2 text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer min-h-[38px] ${
               activeCategory === 'insurance'
                 ? 'bg-[#10243A] text-white shadow-xs'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -171,9 +171,9 @@ export const FAQSection: React.FC = () => {
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}
-                  className="w-full text-left p-5 sm:p-6 flex items-start justify-between gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
+                  className="w-full text-left p-4 sm:p-6 flex items-start justify-between gap-3 hover:bg-slate-50 transition-colors cursor-pointer min-h-[52px]"
                 >
-                  <span className="text-sm sm:text-base font-bold text-[#10243A] tracking-tight leading-snug">
+                  <span className="text-xs sm:text-sm md:text-base font-bold text-[#10243A] tracking-tight leading-snug">
                     {item.question}
                   </span>
                   <span
@@ -186,7 +186,7 @@ export const FAQSection: React.FC = () => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50/50">
+                  <div className="px-4 sm:px-6 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed bg-slate-50/50">
                     <p>{item.answer}</p>
                   </div>
                 )}
@@ -198,12 +198,12 @@ export const FAQSection: React.FC = () => {
         {/* Direct Inquiries Note */}
         <div className="p-4 rounded-lg bg-[#F4F7F8] border border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <strong className="text-slate-900">Have specific building management requirements?</strong>
+            <strong className="text-slate-900 block">Have specific building management requirements?</strong>
             <p className="text-slate-500 mt-0.5">We coordinate walkthroughs to inspect floor compositions, square footage, and security specifications.</p>
           </div>
           <a
             href="tel:2127419400"
-            className="inline-flex items-center gap-1.5 font-semibold text-[#10243A] hover:text-[#3D8B68] transition-colors shrink-0"
+            className="inline-flex items-center gap-1.5 font-bold text-[#10243A] hover:text-[#3D8B68] transition-colors shrink-0 py-1"
           >
             <span>Call (212) 741-9400</span>
           </a>

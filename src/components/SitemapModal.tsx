@@ -32,7 +32,7 @@ ${routes
   .join('\n')}
 </urlset>`;
 
-  const robotsTxt = `# robots.txt for Four Star General Cleaning Concept
+  const robotsTxt = `# robots.txt for Four Star General Cleaning Service Concept
 User-agent: *
 Allow: /
 
@@ -47,18 +47,18 @@ Sitemap: ${baseUrl}/sitemap.xml
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-      <div className="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs">
+      <div className="bg-white rounded-xl shadow-2xl border border-slate-200 w-full max-w-3xl max-h-[88vh] flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div className="px-4 sm:px-6 py-3.5 sm:py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div>
-            <h2 className="text-base font-bold text-[#10243A]">SEO Architecture, Sitemap & robots.txt</h2>
-            <p className="text-xs text-slate-500">Verified indexable routes and search crawler directives</p>
+            <h2 className="text-sm sm:text-base font-bold text-[#10243A]">SEO Architecture & Sitemap</h2>
+            <p className="text-[11px] sm:text-xs text-slate-500">Verified indexable routes and search crawler directives</p>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 text-slate-500 hover:text-slate-800 rounded-md hover:bg-slate-200/50"
+            className="p-1.5 text-slate-500 hover:text-slate-800 rounded-md hover:bg-slate-200/50 min-h-[36px] min-w-[36px] flex items-center justify-center"
             aria-label="Close dialog"
           >
             <X className="w-5 h-5" />
@@ -66,11 +66,11 @@ Sitemap: ${baseUrl}/sitemap.xml
         </div>
 
         {/* Tab Controls */}
-        <div className="flex border-b border-slate-200 px-6 bg-white gap-4 text-xs font-semibold">
+        <div className="flex border-b border-slate-200 px-4 sm:px-6 bg-white gap-3 sm:gap-4 text-xs font-semibold overflow-x-auto scrollbar-none">
           <button
             type="button"
             onClick={() => setActiveTab('routes')}
-            className={`py-3 border-b-2 transition-colors ${
+            className={`py-2.5 sm:py-3 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'routes' ? 'border-[#3D8B68] text-[#10243A]' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -79,7 +79,7 @@ Sitemap: ${baseUrl}/sitemap.xml
           <button
             type="button"
             onClick={() => setActiveTab('xml')}
-            className={`py-3 border-b-2 transition-colors ${
+            className={`py-2.5 sm:py-3 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'xml' ? 'border-[#3D8B68] text-[#10243A]' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -88,7 +88,7 @@ Sitemap: ${baseUrl}/sitemap.xml
           <button
             type="button"
             onClick={() => setActiveTab('robots')}
-            className={`py-3 border-b-2 transition-colors ${
+            className={`py-2.5 sm:py-3 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'robots' ? 'border-[#3D8B68] text-[#10243A]' : 'border-transparent text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -97,7 +97,7 @@ Sitemap: ${baseUrl}/sitemap.xml
         </div>
 
         {/* Tab Content */}
-        <div className="p-6 overflow-y-auto flex-1 text-xs">
+        <div className="p-4 sm:p-6 overflow-y-auto flex-1 text-xs">
           {activeTab === 'routes' && (
             <div className="space-y-3">
               <p className="text-slate-600 mb-2">

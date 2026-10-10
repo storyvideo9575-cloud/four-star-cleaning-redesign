@@ -149,15 +149,15 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-8 lg:p-10">
+    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 sm:p-8 lg:p-10">
       {submissionResult && submissionResult.success ? (
         <div className="space-y-6">
-          <div className="p-6 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 space-y-4">
+          <div className="p-5 sm:p-6 bg-slate-50 border border-slate-200 rounded-lg text-slate-800 space-y-4">
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-6 h-6 text-[#3D8B68] shrink-0 mt-0.5" />
               <div className="space-y-2 flex-1">
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-lg font-bold text-[#10243A]">
+                  <h3 className="text-base sm:text-lg font-bold text-[#10243A]">
                     Quote Request Parameters Validated
                   </h3>
                   {submissionResult.reference && (
@@ -184,11 +184,13 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
                 <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-[#3D8B68]" />
-                  <span>Call: <strong className="text-slate-900">{BUSINESS_INFO.phone}</strong> (Mon–Fri 9 AM–6 PM)</span>
+                  <Phone className="w-4 h-4 text-[#3D8B68] shrink-0" />
+                  <a href={`tel:${BUSINESS_INFO.phoneRaw}`} className="text-slate-900 font-semibold hover:text-[#3D8B68]">
+                    {BUSINESS_INFO.phone} <span className="font-normal text-slate-500">(Mon–Fri 9 AM–6 PM)</span>
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-[#3D8B68]" />
+                  <MapPin className="w-4 h-4 text-[#3D8B68] shrink-0" />
                   <span>{BUSINESS_INFO.address.street}, Suite 601A, New York</span>
                 </div>
               </div>
@@ -199,7 +201,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
             <button
               type="button"
               onClick={handleReset}
-              className="px-5 py-2.5 text-xs font-semibold text-white bg-[#10243A] hover:bg-[#1A3755] rounded-md transition-colors flex items-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-5 py-3 text-xs sm:text-sm font-semibold text-white bg-[#10243A] hover:bg-[#1A3755] rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer min-h-[44px]"
             >
               <RefreshCw className="w-3.5 h-3.5" />
               <span>Submit Another Quote Request</span>
@@ -207,12 +209,12 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} noValidate className="space-y-6">
-          <div className="border-b border-slate-100 pb-4">
-            <h3 className="text-lg font-bold text-[#10243A] tracking-tight">
+        <form onSubmit={handleSubmit} noValidate className="space-y-5 sm:space-y-6">
+          <div className="border-b border-slate-100 pb-3 sm:pb-4">
+            <h3 className="text-base sm:text-lg font-bold text-[#10243A] tracking-tight">
               Commercial Proposal Parameters
             </h3>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-500 mt-0.5">
               Provide your facility details below to structure a recurring cleaning scope.
             </p>
           </div>
@@ -241,7 +243,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
           </div>
 
           {/* Row 1: Full Name & Company Name */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label htmlFor="fullName" className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Full Name <span className="text-rose-600">*</span>
@@ -252,7 +254,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 value={formData.fullName}
                 maxLength={100}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className={`w-full px-3.5 py-2 text-sm bg-white border rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
+                className={`w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
                   errors.fullName ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
                 }`}
                 placeholder="Jane Smith"
@@ -270,7 +272,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 value={formData.companyName}
                 maxLength={120}
                 onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                className={`w-full px-3.5 py-2 text-sm bg-white border rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
+                className={`w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
                   errors.companyName ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
                 }`}
                 placeholder="e.g. Apex Corporate Partners"
@@ -280,7 +282,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
           </div>
 
           {/* Row 2: Business Email & Phone Number */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label htmlFor="businessEmail" className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Business Email <span className="text-rose-600">*</span>
@@ -291,7 +293,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 value={formData.businessEmail}
                 maxLength={120}
                 onChange={(e) => setFormData({ ...formData, businessEmail: e.target.value })}
-                className={`w-full px-3.5 py-2 text-sm bg-white border rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
+                className={`w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
                   errors.businessEmail ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
                 }`}
                 placeholder="jsmith@company.com"
@@ -309,7 +311,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 value={formData.phone}
                 maxLength={25}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className={`w-full px-3.5 py-2 text-sm bg-white border rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
+                className={`w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
                   errors.phone ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
                 }`}
                 placeholder="(212) 555-0199"
@@ -319,7 +321,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
           </div>
 
           {/* Row 3: ZIP Code & Facility Type */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label htmlFor="zipCode" className="block text-xs font-semibold text-slate-700 mb-1.5">
                 NYC Facility ZIP Code <span className="text-rose-600">*</span>
@@ -330,7 +332,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 maxLength={5}
                 value={formData.zipCode}
                 onChange={(e) => setFormData({ ...formData, zipCode: e.target.value })}
-                className={`w-full px-3.5 py-2 text-sm bg-white border rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
+                className={`w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] transition-colors ${
                   errors.zipCode ? 'border-rose-400 bg-rose-50/20' : 'border-slate-300'
                 }`}
                 placeholder="10010"
@@ -346,7 +348,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 id="facilityType"
                 value={formData.facilityType}
                 onChange={(e) => setFormData({ ...formData, facilityType: e.target.value })}
-                className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-slate-300 rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
               >
                 <option value="Commercial Corporate Office">Commercial Corporate Office</option>
                 <option value="Medical or Dental Clinic">Medical or Dental Clinic</option>
@@ -360,7 +362,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
           </div>
 
           {/* Row 4: Requested Service & Cleaning Frequency */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             <div>
               <label htmlFor="requestedService" className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Cleaning Service Requested
@@ -369,7 +371,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 id="requestedService"
                 value={formData.requestedService}
                 onChange={(e) => setFormData({ ...formData, requestedService: e.target.value })}
-                className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-slate-300 rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
               >
                 <option value="Commercial Office Cleaning">Commercial Office Cleaning</option>
                 <option value="Janitorial Services & Building Upkeep">Janitorial Services & Building Upkeep</option>
@@ -389,7 +391,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 id="cleaningFrequency"
                 value={formData.cleaningFrequency}
                 onChange={(e) => setFormData({ ...formData, cleaningFrequency: e.target.value })}
-                className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
+                className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-slate-300 rounded-lg shadow-2xs min-h-[44px] focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68]"
               >
                 <option value="Daily (5–7 days per week)">Daily (5–7 days per week)</option>
                 <option value="2–3 Times per week">2–3 Times per week</option>
@@ -412,7 +414,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
               maxLength={1000}
               value={formData.additionalRequirements}
               onChange={(e) => setFormData({ ...formData, additionalRequirements: e.target.value })}
-              className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-md shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] resize-y"
+              className="w-full px-3.5 py-2.5 text-base sm:text-sm bg-white border border-slate-300 rounded-lg shadow-2xs focus:ring-2 focus:ring-[#3D8B68] focus:border-[#3D8B68] resize-y"
               placeholder="Approximate square footage, preferred service hours (overnight/day porter), special floor care or sanitization needs..."
             />
           </div>
@@ -425,7 +427,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 id="consent"
                 checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                className="mt-1 h-4 w-4 rounded border-slate-300 text-[#3D8B68] focus:ring-[#3D8B68]"
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-[#3D8B68] focus:ring-[#3D8B68] cursor-pointer"
               />
               <label htmlFor="consent" className="text-xs text-slate-600 leading-relaxed cursor-pointer select-none">
                 I understand that this request form is for proposal formulation. Pricing and schedules are finalized following facility scope review.
@@ -439,7 +441,7 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3.5 px-6 text-sm font-semibold text-white bg-[#10243A] hover:bg-[#1A3755] active:bg-[#0A1726] disabled:bg-slate-400 rounded-md shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-4 px-6 text-sm sm:text-base font-bold text-white bg-[#10243A] hover:bg-[#1A3755] active:bg-[#0A1726] disabled:bg-slate-400 rounded-lg shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer min-h-[48px]"
             >
               {isSubmitting ? (
                 <>
@@ -450,8 +452,12 @@ export const QuoteForm: React.FC<QuoteFormProps> = ({ initialService }) => {
                 <span>Request Commercial Cleaning Proposal</span>
               )}
             </button>
-            <p className="mt-2.5 text-center text-[11px] text-slate-500">
-              Direct telephone inquiries: <strong className="text-slate-700">{BUSINESS_INFO.phone}</strong> (Monday–Friday 9 AM–6 PM).
+            <p className="mt-2.5 text-center text-xs text-slate-500">
+              Direct telephone inquiries:{' '}
+              <a href={`tel:${BUSINESS_INFO.phoneRaw}`} className="font-semibold text-slate-800 hover:text-[#3D8B68] underline">
+                {BUSINESS_INFO.phone}
+              </a>{' '}
+              (Mon–Fri 9 AM–6 PM).
             </p>
           </div>
         </form>

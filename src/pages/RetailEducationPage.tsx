@@ -10,42 +10,42 @@ interface Props {
 
 export const RetailEducationPage: React.FC<Props> = ({ onNavigate }) => {
   return (
-    <div className="space-y-16 pb-20">
+    <div className="space-y-10 sm:space-y-16 pb-16 sm:pb-20 overflow-x-hidden">
       {/* Header */}
-      <section className="bg-[#10243A] text-white py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <section className="bg-[#10243A] text-white py-8 sm:py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 sm:space-y-4">
           <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
             <button
               type="button"
               onClick={() => onNavigate('/services')}
-              className="hover:text-white transition-colors underline"
+              className="hover:text-white transition-colors underline cursor-pointer"
             >
               Services
             </button>
             <span aria-hidden="true">/</span>
-            <span>Retail & Educational Cleaning</span>
+            <span>Retail & Education Cleaning</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-extrabold tracking-tight">
             Retail and Educational Facility Cleaning
           </h1>
-          <p className="text-slate-300 text-base max-w-2xl leading-relaxed">
-            High-traffic maintenance programs for retail showrooms, Manhattan boutiques, private schools, academies, and educational spaces.
+          <p className="text-slate-300 text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed">
+            High-traffic maintenance routines for NYC retail storefronts, showrooms, academic institutions, and training centers.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-[#3D8B68]">
-                High-Foot-Traffic Environments
+              <span className="text-[11px] font-bold uppercase tracking-wider text-[#3D8B68]">
+                High-Footfall Facility Care
               </span>
-              <h2 className="text-2xl font-bold text-[#10243A] tracking-tight">
-                Flawless Presentation for Customers and Students
+              <h2 className="text-xl sm:text-2xl font-bold text-[#10243A] tracking-tight">
+                Spotless First Impressions & Sanitary Classrooms
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-slate-600 leading-relaxed">
                 Whether greeting retail shoppers on Fifth Avenue or maintaining a safe, hygienic environment for students and faculty, public-facing facilities demand high operational consistency. Four Star General Cleaning Service implements rigorous floor care, display polishing, and common area sanitization before doors open.
               </p>
             </div>
@@ -53,54 +53,44 @@ export const RetailEducationPage: React.FC<Props> = ({ onNavigate }) => {
             <div className="rounded-xl overflow-hidden border border-slate-200 aspect-16/10 bg-slate-100">
               <img
                 src={IMAGES.office}
-                alt="Clean commercial interior floor suitable for retail and education facilities"
+                alt="Contemporary commercial facility layout"
                 className="w-full h-full object-cover"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-              <div className="p-5 bg-white border border-slate-200 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-[#10243A] font-bold text-sm">
-                  <ShoppingBag className="w-4 h-4 text-[#3D8B68]" />
-                  <span>Retail Store Standards</span>
+            <div className="space-y-4 pt-2">
+              <h3 className="text-base sm:text-lg font-bold text-[#10243A]">Retail & Educational Core Tasks</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs text-slate-700">
+                <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-1.5">
+                  <h4 className="font-bold text-slate-900">Retail Sales Floors</h4>
+                  <p className="text-slate-600 leading-relaxed">Display case glass buffing, fixture dusting, threshold polishing, and fitting room sanitization.</p>
                 </div>
-                <ul className="space-y-1.5 text-xs text-slate-600">
-                  <li>• Storefront window and entry glass cleaning</li>
-                  <li>• Dusting merchandise display shelving and racks</li>
-                  <li>• Fitting room mirror cleaning and floor care</li>
-                  <li>• Checkout point-of-sale surface wipe downs</li>
-                </ul>
-              </div>
-
-              <div className="p-5 bg-white border border-slate-200 rounded-lg space-y-3">
-                <div className="flex items-center gap-2 text-[#10243A] font-bold text-sm">
-                  <GraduationCap className="w-4 h-4 text-[#3D8B68]" />
-                  <span>Educational Facility Care</span>
+                <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-1.5">
+                  <h4 className="font-bold text-slate-900">Classrooms & Desks</h4>
+                  <p className="text-slate-600 leading-relaxed">Desk surface disinfecting, whiteboard wiping, trash emptying, and daily hard floor dust-mopping.</p>
                 </div>
-                <ul className="space-y-1.5 text-xs text-slate-600">
-                  <li>• Classroom desk and whiteboard cleaning</li>
-                  <li>• Hallway, stairwell, and locker area mopping</li>
-                  <li>• School cafeteria table wipedown and trash removal</li>
-                  <li>• Faculty lounges and administrative office care</li>
-                </ul>
+                <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-1.5">
+                  <h4 className="font-bold text-slate-900">High-Traffic Entryways</h4>
+                  <p className="text-slate-600 leading-relaxed">Walk-off mat vacuuming, door glass cleaning, vestibule sweeping, and seasonal salt residue removal.</p>
+                </div>
+                <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-1.5">
+                  <h4 className="font-bold text-slate-900">Corridors & Hallways</h4>
+                  <p className="text-slate-600 leading-relaxed">High dusting of vents, locker exterior wipedown, drinking fountain sanitization, and burnishing.</p>
+                </div>
               </div>
             </div>
 
-            <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600">
-              <strong className="text-slate-800">Reliable Scheduling:</strong> Evening and early-morning shifts allow thorough vacuuming, mopping, and restocking without interfering with shoppers or class schedules.
+            <div className="p-4 bg-slate-50 border border-slate-200 rounded-lg text-xs text-slate-600 space-y-1">
+              <p className="font-semibold text-slate-800">Flexible Operating Hours:</p>
+              <p>Cleaning shifts can be completed overnight or early in the morning before retail opening or school bell ringing.</p>
             </div>
           </div>
 
           {/* Right Column: Quote Form */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-xs space-y-4">
-              <div className="border-b border-slate-100 pb-3">
-                <h3 className="text-base font-bold text-[#10243A]">Proposal Request</h3>
-                <p className="text-xs text-slate-500 mt-0.5">Test quote configuration for your storefront or academy.</p>
-              </div>
-              <QuoteForm initialService="Retail & Educational Cleaning" />
-            </div>
+          <div className="lg:col-span-5 space-y-4">
+            <QuoteForm initialService="Retail & Educational Cleaning" />
           </div>
         </div>
       </section>

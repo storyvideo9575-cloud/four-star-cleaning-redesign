@@ -14,7 +14,7 @@ export const IMAGES = {
 
 export const BUSINESS_INFO = {
   name: 'Four Star General Cleaning Service',
-  shortName: 'Four Star General Cleaning',
+  shortName: 'Four Star General Cleaning Service',
   category: 'Commercial Cleaning and Janitorial Services',
   address: {
     street: '19 West 21st Street, Suite 601A',
@@ -215,7 +215,7 @@ export const SEO_PAGE_METADATA: Record<string, { title: string; desc: string; h1
     h1: 'Medical and Dental Facility Cleaning'
   },
   '/services/retail-education': {
-    title: 'Retail & Educational Facility Cleaning NYC | Four Star General Cleaning',
+    title: 'Retail & Educational Facility Cleaning NYC | Four Star General Cleaning Service',
     desc: 'Clean storefronts, retail boutiques, educational centers, and private school facilities across New York City.',
     h1: 'Retail and Educational Facility Cleaning'
   },
