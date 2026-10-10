@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy: #10243A;
+    --color-navy-dark: #0A1726;
+    --color-navy-light: #1A3755;
+    --color-green: #3D8B68;
+    --color-green-dark: #2F6D52;
+    --color-green-light: #4A9F78;
+    --color-canvas: #F4F7F8;
+    --color-surface: #FFFFFF;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1F2937;
+    background-color: #F4F7F8;
+  }
+}
+
+/* Restrained smooth focus rings */
+*:focus-visible {
+  outline: 2px solid #3D8B68;
+  outline-offset: 2px;
+}
